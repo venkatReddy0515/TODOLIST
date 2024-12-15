@@ -1,7 +1,7 @@
 import Axios from "axios";
 import { useEffect, useState } from 'react';
 import './App.css';
-import { trusted } from "mongoose";
+
 function App() {
   const [task, setTask] = useState("");
   const [date, setDate] = useState("");
