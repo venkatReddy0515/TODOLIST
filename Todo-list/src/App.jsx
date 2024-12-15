@@ -11,7 +11,7 @@ function App() {
   const [message,setMessage]=useState('');
 
   useEffect(()=>{
-    Axios.get("https://todo-list-backend-oofk.onrender.com")
+    Axios.get("https://todo-list-523q.onrender.com")
     .then((response)=>{
       setTasks(response.data);
       console.log(tasks);
@@ -24,7 +24,7 @@ function App() {
       return;
     }
     setTasks([...tasks, { task, date, complete: false }]);
-    Axios.post("https://todo-list-backend-oofk.onrender.com/task",{task,date})
+    Axios.post("https://todo-list-523q.onrender.com/task",{task,date})
     .then((response)=>{
       setMessage(response);
       console.log(response);
@@ -38,7 +38,7 @@ function App() {
 
   const toggleComplete = (index) => {
 
-    Axios.put(`https://todo-list-backend-oofk.onrender.com/task/${index}`,{task,complete:true})
+    Axios.put(`https://todo-list-523q.onrender.com/task/${index}`,{task,complete:true})
     .then((response)=>{
       console.log(response.data);
       alert(response.data);
@@ -62,7 +62,7 @@ function App() {
     
   }
   const update=()=>{
-    Axios.put(`https://todo-list-backend-oofk.onrender.com/task/${editIndex}`,{task,complete:false})
+    Axios.put(`https://todo-list-523q.onrender.com/task/${editIndex}`,{task,complete:false})
     .then((response)=>{
       console.log(response.data);
       alert(response.data);
@@ -77,7 +77,7 @@ function App() {
   }
 
   const Delete = (index) => {
-    Axios.delete(`https://todo-list-backend-oofk.onrender.com/task/${index}`)
+    Axios.delete(`https://todo-list-523q.onrender.com/task/${index}`)
     .then((response)=>{
       alert(response.data)
     })
